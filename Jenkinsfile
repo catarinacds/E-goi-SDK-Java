@@ -11,7 +11,7 @@ timeout(time: 15, unit: 'MINUTES') {
 
            sh "rm -rf target/"
            sh "ls"
-           sh "mvn clean install"
+           sh "/usr/local/bin/mvn clean install"
        }
        stage('Test') {
            //add junit tests
