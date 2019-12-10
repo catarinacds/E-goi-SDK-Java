@@ -6,7 +6,7 @@ timeout(time: 15, unit: 'MINUTES') {
            checkout scm
        }
        stage('Build') {
-           sh "openapi-generator generate -i https://dev-api.egoiapp.com/openapi -g java -o . -c config.json"
+           sh "openapi-generator generate -i https://dev-api.egoiapp.com/openapi -g java -o . -c configJava.json"
 
            sh "rm -rf target/"
            sh "mvn clean install"
