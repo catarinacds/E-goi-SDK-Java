@@ -9,6 +9,7 @@ timeout(time: 15, unit: 'MINUTES') {
            sh "openapi-generator generate -i https://dev-api.egoiapp.com/openapi -g java -o . -c configJava.json"
 
            sh "rm -rf target/"
+           sh "ls"
            sh "mvn clean install"
        }
        stage('Test') {
