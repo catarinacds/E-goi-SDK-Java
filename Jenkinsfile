@@ -7,7 +7,7 @@ timeout(time: 15, unit: 'MINUTES') {
        }
        stage('Build') {
            sh "openapi-generator version"
-           sh "openapi-generator generate -i https://dev-api.egoiapp.com/openapi -g php -o . -c configJava.json"
+           sh "openapi-generator generate -i https://dev-api.egoiapp.com/openapi -g java -o . -c configJava.json"
 
            sh "rm -rf target/"
            sh "ls"
