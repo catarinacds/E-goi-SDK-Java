@@ -13,9 +13,6 @@ timeout(time: 15, unit: 'MINUTES') {
            sh "ls"
            sh "/usr/local/bin/mvn clean install"
        }
-       stage('Test') {
-           //add junit tests
-       }
        stage('Deploy') {
            def json = readFile(file:'config.json')
            def data = new JsonSlurperClassic().parseText(json)
