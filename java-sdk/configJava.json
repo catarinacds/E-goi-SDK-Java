@@ -1,0 +1,13 @@
+{
+	"invokerPackage" : "org.egoi.client",
+	"apiPackage" : "org.egoi.client.api",
+	"modelPackage" : "org.egoi.client.model",
+	"groupId" : "org.egoi",
+	"artifactId" : "egoi-java-client",
+	"artifactVersion" : "1.3.0",
+	"artifactUrl" : "https://developers.e-goi.com/api/v3/",
+	"artifactDescription" : "OpenApi Egoi Java",
+	"developerName" : "E-goi OpenApi",
+	"developerOrganization" : "E-goi",
+	"developerOrganizationUrl" : "https://www.e-goi.com/"
+}
