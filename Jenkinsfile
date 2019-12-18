@@ -6,6 +6,8 @@ timeout(time: 15, unit: 'MINUTES') {
            checkout scm
        }
        stage('Build') {
+           // Clean previously built sdks
+           cleanWs deleteDirs: true, patterns: [[pattern: '*-sdk*', type: 'INCLUDE']]
            copyArtifacts filter: 'java-sdk.zip', fingerprintArtifacts: true, projectName: 'SDK Configs/master', selector: lastWithArtifacts(), target: './'
            sh "unzip java-sdk.zip -d java-sdk"
        }
