@@ -7,7 +7,7 @@ timeout(time: 15, unit: 'MINUTES') {
        }
        stage('Build') {
            copyArtifacts filter: 'sdk-java.zip', fingerprintArtifacts: true, projectName: 'SDK Configs', selector: lastWithArtifacts(), target: './'
-           sh "unzip sdk-java.zip"
+           sh "unzip java-sdk.zip"
        }
        //stage('Test'){
        //     sh "/usr/local/bin/mvn clean install"
