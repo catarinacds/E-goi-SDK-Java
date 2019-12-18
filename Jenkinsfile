@@ -18,7 +18,8 @@ timeout(time: 15, unit: 'MINUTES') {
            def json = readFile(file:'java-sdk/configJava.json')
            def data = new JsonSlurperClassic().parseText(json)
            def version = data.artifactVersion
-
+           
+           sh "git add java-sdk/"
            sh "git commit -am \"Version:  ${version}\""
            sh 'git push'
            sh "git tag ${version}"
