@@ -6,8 +6,8 @@ timeout(time: 15, unit: 'MINUTES') {
            checkout scm
        }
        stage('Build') {
-           sh "rm -rf target/"
-           sh "ls"
+           copyArtifacts filter: 'sdk-java.zip', fingerprintArtifacts: true, projectName: 'SDK Configs', selector: lastWithArtifacts(), target: './'
+           sh "unzip sdk-java.zip"
        }
        //stage('Test'){
        //     sh "/usr/local/bin/mvn clean install"
