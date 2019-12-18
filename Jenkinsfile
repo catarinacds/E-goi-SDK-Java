@@ -13,7 +13,7 @@ timeout(time: 15, unit: 'MINUTES') {
        //     sh "/usr/local/bin/mvn clean install"
        //}
        stage('Deploy') {
-           def json = readFile(file:'config.json')
+           def json = readFile(file:'java-sdk/configJava.json')
            def data = new JsonSlurperClassic().parseText(json)
            def version = data.artifactVersion
 
