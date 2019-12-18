@@ -6,7 +6,7 @@ timeout(time: 15, unit: 'MINUTES') {
            checkout scm
        }
        stage('Build') {
-           copyArtifacts filter: 'sdk-java.zip', fingerprintArtifacts: true, projectName: 'SDK Configs', selector: lastWithArtifacts(), target: './'
+           copyArtifacts filter: 'sdk-java.zip', fingerprintArtifacts: true, projectName: 'SDK Configs/master', selector: lastWithArtifacts(), target: './'
            sh "unzip java-sdk.zip"
        }
        //stage('Test'){
