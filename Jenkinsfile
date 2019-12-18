@@ -8,8 +8,10 @@ timeout(time: 15, unit: 'MINUTES') {
        stage('Build') {
            sh "rm -rf target/"
            sh "ls"
-           sh "/usr/local/bin/mvn clean install"
        }
+       //stage('Test'){
+       //     sh "/usr/local/bin/mvn clean install"
+       //}
        stage('Deploy') {
            def json = readFile(file:'config.json')
            def data = new JsonSlurperClassic().parseText(json)
