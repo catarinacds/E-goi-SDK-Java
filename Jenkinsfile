@@ -21,7 +21,7 @@ timeout(time: 15, unit: 'MINUTES') {
            sh "git add java-sdk/"
            sh "git commit -am \"Version:  ${version}\""
            sh 'git push'
-           sh "git tag ${version}"
+           sh "git tag '${version}'"
            sh 'git push --tags'
        }
    }
